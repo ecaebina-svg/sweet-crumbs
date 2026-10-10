@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sweet Crumbs</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== SPLASH SCREEN ===== -->
+    <div id="splash-screen" class="screen active">
+        <div class="splash-top">
+            <div class="chef-icon"><i class="fas fa-crown"></i></div>
+            <h1 class="brand-title">Sweet,<br>Crumbs</h1>
+            <p class="brand-sub">Sweet Moments, In Every Bite</p>
+        </div>
+        <div class="splash-bottom">
+            <div class="splash-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dessert" class="splash-img">
+            </div>
+            <p class="loading-text">Menyiapkan kelezatan...</p>
+        </div>
+        <div class="bubbles-container">
+            <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+            <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+            <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+            <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+            <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+            <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+            <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+            <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+        </div>
+    </div>
+
+    <!-- ===== HOME SCREEN ===== -->
+    <div id="home-screen" class="screen">
+        <header class="app-header">
+            <div class="header-top">
+                <div class="header-spacer"></div>
+                <div class="menu-dots-wrapper">
+                    <i class="fas fa-ellipsis-v menu-dots" onclick="toggleDropdown(event)"></i>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <div class="dropdown-item" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> <span>Mode Gelap</span></div>
+                        <div class="dropdown-item" onclick="goToAbout()"><i class="fas fa-info-circle"></i> <span>Tentang</span></div>
+                        <div class="dropdown-item" onclick="goToHelp()"><i class="fas fa-question-circle"></i> <span>Bantuan</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="brand-header">
+                <div class="brand-logo-wrapper">
+                    <i class="fas fa-crown mini-crown"></i>
+                    <h1 class="brand-header-title">Sweet Crumbs</h1>
+                </div>
+                <p class="brand-header-sub">Sweet Moments, In Every Bite</p>
+            </div>
+        </header>
+
+        <main class="app-content">
+            <div class="bestseller-label"><i class="fas fa-fire"></i><span>Menu Best Seller</span></div>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carousel-track"></div>
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+
+            <div class="section-header">
+                <div><h3>Pilih Kategori</h3><p class="section-sub">Klik untuk melihat produk</p></div>
+            </div>
+            <div class="categories categories-full">
+                <div class="cat-item" onclick="filterCategory('Croffle', this)"><div class="cat-icon"><i class="fas fa-utensils"></i></div><span>Croffle</span></div>
+                <div class="cat-item" onclick="filterCategory('Dessert Box', this)"><div class="cat-icon"><i class="fas fa-birthday-cake"></i></div><span>Dessert Box</span></div>
+                <div class="cat-item" onclick="filterCategory('Minuman', this)"><div class="cat-icon"><i class="fas fa-coffee"></i></div><span>Minuman</span></div>
+            </div>
+
+            <div id="product-section" class="product-section hidden">
+                <div class="section-header" style="margin-top: 25px;">
+                    <div><h3 id="category-title">Croffle</h3><p class="section-sub" id="category-sub">Pilihan terbaik untukmu</p></div>
+                    <i class="fas fa-times close-product" onclick="closeProducts()"></i>
+                </div>
+                <div class="product-grid" id="product-list"></div>
+            </div>
+
+            <div class="section-header" style="margin-top: 30px;">
+                <div><h3>Ulasan Pelanggan</h3><p class="section-sub">Apa kata mereka tentang Sweet Crumbs</p></div>
+                <button class="btn-add-review" onclick="openReviewModal()" title="Tambah Ulasan">
+                    <i class="fas fa-plus"></i><span class="btn-add-text">Tambah Ulasan</span>
+                </button>
+            </div>
+            <div class="review-list" id="review-list"></div>
+        </main>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active" onclick="switchTab('home', this)"><i class="fas fa-home"></i><span>Home</span></div>
+            <div class="nav-item" onclick="goToCart(this)"><i class="fas fa-shopping-bag"></i><span>Keranjang</span></div>
+            <div class="nav-item" onclick="switchTab('history', this)"><i class="fas fa-receipt"></i><span>Riwayat</span></div>
+            <div class="nav-item" onclick="goToAdmin(this)"><i class="fas fa-user-shield"></i><span>Admin</span></div>
+        </nav>
+    </div>
+
+    <!-- ===== TENTANG ===== -->
+    <div id="about-screen" class="screen">
+        <header class="app-header-simple"><i class="fas fa-arrow-left" onclick="switchTab('home')"></i><h3>Tentang</h3><div style="width: 20px;"></div></header>
+        <main class="app-content about-content">
+            <div class="about-hero">
+                <div class="about-logo"><i class="fas fa-crown"></i></div>
+                <h2>Sweet Crumbs</h2>
+                <p>Sweet Moments, In Every Bite</p>
+                <span class="about-version">Versi 1.0</span>
+            </div>
+            <div class="about-card">
+                <div class="about-card-title"><i class="fas fa-book-open"></i><h3>Sejarah Kami</h3></div>
+                <p>Sweet Crumbs lahir pada tahun <strong>2023</strong> dari sebuah dapur kecil di <strong>Medan</strong>, berawal dari kecintaan kami terhadap dessert kekinian. Awalnya hanya iseng membuat croffle untuk keluarga, namun respon positif dari kerabat membuat kami memberanikan diri membuka usaha kecil-kecilan.</p>
+                <p>Berbekal resep keluarga dan bahan-bahan pilihan, kami terus berkembang. Kini Sweet Crumbs telah melayani <strong>ribuan pelanggan setia</strong> di seluruh Indonesia.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-title"><i class="fas fa-birthday-cake"></i><h3>Tentang Produk</h3></div>
+                <p>Kami menyajikan berbagai dessert kekinian yang dibuat fresh setiap hari:</p>
+                <div class="about-products">
+                    <div class="about-product-item"><i class="fas fa-utensils"></i><div><strong>Croffle</strong><span>Perpaduan croissant & waffle dengan topping premium</span></div></div>
+                    <div class="about-product-item"><i class="fas fa-birthday-cake"></i><div><strong>Dessert Box</strong><span>Dessert lembut dalam kemasan cantik</span></div></div>
+                    <div class="about-product-item"><i class="fas fa-coffee"></i><div><strong>Minuman</strong><span>Minuman segar pendamping dessert</span></div></div>
+                </div>
+            </div>
+            <div class="about-footer"><p>© 2025 Sweet Crumbs. Made with 💕 in Medan</p></div>
+        </main>
+    </div>
+
+    <!-- ===== BANTUAN ===== -->
+    <div id="help-screen" class="screen">
+        <header class="app-header-simple"><i class="fas fa-arrow-left" onclick="switchTab('home')"></i><h3>Bantuan</h3><div style="width: 20px;"></div></header>
+        <main class="app-content help-content">
+            <div class="help-hero">
+                <div class="help-icon"><i class="fas fa-headset"></i></div>
+                <h2>Butuh Bantuan?</h2>
+                <p>Tim kami siap membantu kamu 24/7</p>
+            </div>
+            <div class="help-contact-card" onclick="chatAdmin()">
+                <div class="help-contact-avatar"><i class="fab fa-whatsapp"></i></div>
+                <div class="help-contact-info"><h4>Chat Admin</h4><p id="admin-phone-display">+62 812-3456-7890</p><span class="help-status"><i class="fas fa-circle"></i> Online sekarang</span></div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="help-contact-card" onclick="callAdmin()">
+                <div class="help-contact-avatar" style="background: linear-gradient(135deg, #2196F3, #1976D2);"><i class="fas fa-phone"></i></div>
+                <div class="help-contact-info"><h4>Telepon Admin</h4><p id="admin-phone-call">+62 812-3456-7890</p><span class="help-status"><i class="fas fa-circle"></i> 09.00 - 21.00</span></div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="help-contact-card" onclick="emailAdmin()">
+                <div class="help-contact-avatar" style="background: linear-gradient(135deg, #EA4335, #C62828);"><i class="fas fa-envelope"></i></div>
+                <div class="help-contact-info"><h4>Email Admin</h4><p>hello@sweetcrumbs.id</p><span class="help-status">Respon dalam 24 jam</span></div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="section-header" style="margin-top: 25px;">
+                <div><h3>Pertanyaan Umum</h3><p class="section-sub">Jawaban untuk pertanyaan yang sering ditanyakan</p></div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-question"><span>Bagaimana cara pesan?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Pilih produk favoritmu, tambahkan ke keranjang, lalu checkout. Pesanan akan segera diproses!</p></div></div>
+                <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-question"><span>Metode pembayaran apa saja?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Kami menerima Cash (Bayar di Tempat), Transfer Bank, dan QRIS.</p></div></div>
+                <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-question"><span>Berapa lama pengiriman?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Pengiriman dalam kota 30-60 menit, luar kota 1-3 hari kerja.</p></div></div>
+                <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-question"><span>Apakah bisa custom pesanan?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Bisa! Untuk pesanan custom (jumlah besar/acara), silakan chat langsung ke admin kami.</p></div></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== DETAIL PRODUK ===== -->
+    <div id="detail-screen" class="screen">
+        <header class="app-header-simple"><i class="fas fa-arrow-left" onclick="switchTab('home')"></i><h3>Detail Produk</h3><i class="fas fa-shopping-cart" onclick="goToCart()"></i></header>
+        <main class="app-content detail-content" id="detail-content"></main>
+    </div>
+
+    <!-- ===== KERANJANG ===== -->
+    <div id="cart-screen" class="screen">
+        <header class="app-header-simple"><i class="fas fa-arrow-left" onclick="switchTab('home')"></i><h3>Keranjang</h3><div style="width: 20px;"></div></header>
+        <main class="app-content cart-content" id="cart-content"></main>
+        <div class="cart-footer" id="cart-footer">
+            <div class="total-price"><span>Total</span><h4 id="cart-total">Rp 0</h4></div>
+            <button class="btn-primary" onclick="goToCheckout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- ===== CHECKOUT (PERSIS SEPERTI GAMBAR) ===== -->
+    <div id="checkout-screen" class="screen">
+        <header class="app-header-simple"><i class="fas fa-arrow-left" onclick="goToCart()"></i><h3>Checkout</h3><div style="width: 20px;"></div></header>
+        <main class="app-content checkout-content">
+
+            <!-- METODE PENGAMBILAN -->
+            <h4 class="checkout-label">METODE PENGAMBILAN</h4>
+            <div class="delivery-methods">
+                <div class="delivery-card active" onclick="selectDelivery('Delivery', this)">
+                    <div class="delivery-icon"><i class="fas fa-motorcycle"></i></div>
+                    <div><strong>Delivery</strong><span>Diantar ke alamat</span></div>
+                </div>
+                <div class="delivery-card" onclick="selectDelivery('PickUp', this)">
+                    <div class="delivery-icon"><i class="fas fa-store"></i></div>
+                    <div><strong>Pick Up</strong><span>Ambil di tempat</span></div>
+                </div>
+            </div>
+
+            <!-- ALAMAT -->
+            <div class="checkout-field">
+                <label>Alamat Pengiriman</label>
+                <textarea placeholder="Tulis alamat lengkap..." class="checkout-input checkout-textarea"></textarea>
+            </div>
+
+            <div class="checkout-field">
+                <label>Kecamatan Tujuan Pengantaran</label>
+                <div class="select-wrapper">
+                    <select class="checkout-input">
+                        <option>Pilih kecamatan tujuan</option>
+                        <option>Medan Kota</option>
+                        <option>Medan Baru</option>
+                        <option>Medan Selayang</option>
+                        <option>Medan Petisah</option>
+                        <option>Medan Helvetia</option>
+                    </select>
+                    <i class="fas fa-chevron-down select-arrow"></i>
+                </div>
+            </div>
+
+            <div class="checkout-field">
+                <label>Nama Pemesan</label>
+                <input type="text" class="checkout-input" placeholder="Nama kamu">
+            </div>
+
+            <div class="checkout-field">
+                <label>No. WhatsApp</label>
+                <input type="tel" class="checkout-input" placeholder="08xxxxxxxxxx">
+            </div>
+
+            <!-- METODE PEMBAYARAN -->
+            <h4 class="checkout-label" style="margin-top: 20px;">METODE PEMBAYARAN</h4>
+            <div class="payment-methods">
+                <div class="payment-card active" onclick="selectPayment('Cash', this)">
+                    <div class="payment-icon" style="background: linear-gradient(135deg, #25D366, #128C7E);"><i class="fas fa-money-bill-wave"></i></div>
+                    <strong>Cash</strong><span>Bayar di tempat</span>
+                </div>
+                <div class="payment-card" onclick="selectPayment('Transfer', this)">
+                    <div class="payment-icon" style="background: linear-gradient(135deg, #607D8B, #455A64);"><i class="fas fa-university"></i></div>
+                    <strong>Transfer</strong><span>via bank</span>
+                </div>
+                <div class="payment-card" onclick="selectPayment('QRIS', this)">
+                    <div class="payment-icon" style="background: linear-gradient(135deg, #E91E63, #C2185B);"><i class="fas fa-qrcode"></i></div>
+                    <strong>QRIS</strong><span>scan & bayar</span>
+                </div>
+            </div>
+
+            <div class="payment-note">
+                <i class="fas fa-money-bill-wave"></i>
+                <p>Siapkan uang pas sejumlah total pesanan saat pesanan diterima / diambil.</p>
+            </div>
+
+            <!-- RINGKASAN -->
+            <div class="checkout-summary">
+                <div class="summary-row"><span>Subtotal</span><span id="checkout-subtotal">Rp 30.000</span></div>
+                <div class="summary-row"><span>Ongkos Kirim</span><span id="checkout-shipping">—</span></div>
+                <div class="summary-row total"><span>Total</span><span id="checkout-total">Rp 30.000</span></div>
+            </div>
+
+        </main>
+        <div class="checkout-footer">
+            <button class="btn-checkout" onclick="showHistory()">Buat Pesanan · <span id="btn-total">Rp 30.000</span></button>
+        </div>
+    </div>
+
+    <!-- ===== RIWAYAT ===== -->
+    <div id="history-screen" class="screen">
+        <header class="app-header-simple"><h3>Pesanan Saya</h3></header>
+        <main class="app-content">
+            <div class="history-tabs">
+                <span class="active" onclick="filterHistory('all', this)">Semua</span>
+                <span onclick="filterHistory('diproses', this)">Diproses</span>
+                <span onclick="filterHistory('dikirim', this)">Dikirim</span>
+                <span onclick="filterHistory('selesai', this)">Selesai</span>
+            </div>
+            <div class="history-list" id="history-list"></div>
+        </main>
+        <nav class="bottom-nav">
+            <div class="nav-item" onclick="switchTab('home', this)"><i class="fas fa-home"></i><span>Home</span></div>
+            <div class="nav-item" onclick="goToCart(this)"><i class="fas fa-shopping-bag"></i><span>Keranjang</span></div>
+            <div class="nav-item active" onclick="switchTab('history', this)"><i class="fas fa-receipt"></i><span>Riwayat</span></div>
+            <div class="nav-item" onclick="goToAdmin(this)"><i class="fas fa-user-shield"></i><span>Admin</span></div>
+        </nav>
+    </div>
+
+    <!-- ===== ADMIN LOGIN ===== -->
+    <div id="admin-login-screen" class="screen">
+        <header class="app-header-simple"><i class="fas fa-arrow-left" onclick="switchTab('home')"></i><h3>Login Admin</h3><div style="width: 20px;"></div></header>
+        <main class="app-content admin-login-content">
+            <div class="admin-login-hero">
+                <div class="admin-login-crown">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h2>Selamat Datang, Admin! 👑</h2>
+                <p>Masuk untuk mengelola Sweet Crumbs</p>
+            </div>
+
+            <div class="admin-login-form">
+                <div class="admin-input-wrapper">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="admin-user" placeholder="Username" class="admin-input">
+                </div>
+                <div class="admin-input-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="admin-pass" placeholder="Password" class="admin-input">
+                </div>
+                <button class="admin-login-btn" onclick="loginAdmin()">
+                    <i class="fas fa-sign-in-alt"></i> Masuk
+                </button>
+                <p class="admin-hint">💡 Hint: admin / admin123</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== ADMIN DASHBOARD ===== -->
+    <div id="admin-screen" class="screen">
+        <header class="app-header-simple">
+            <h3>Admin Panel</h3>
+            <i class="fas fa-sign-out-alt" onclick="logoutAdmin()"></i>
+        </header>
+        <main class="app-content">
+            <div class="admin-welcome">
+                <div class="admin-avatar"><i class="fas fa-crown"></i></div>
+                <h3>Halo, Admin! 👋</h3>
+                <p>Kelola produk, pesanan, dan laporan di sini</p>
+            </div>
+
+            <div class="admin-stats">
+                <div class="stat-card"><i class="fas fa-shopping-cart"></i><h4 id="stat-orders">24</h4><p>Pesanan</p></div>
+                <div class="stat-card"><i class="fas fa-money-bill-wave"></i><h4>Rp 1.2jt</h4><p>Pendapatan</p></div>
+                <div class="stat-card"><i class="fas fa-box"></i><h4 id="stat-products">12</h4><p>Produk</p></div>
+                <div class="stat-card"><i class="fas fa-users"></i><h4>48</h4><p>Pelanggan</p></div>
+            </div>
+
+            <h3 class="section-title">Menu Admin</h3>
+            <div class="admin-menu-list">
+                <div class="admin-menu-item" onclick="openAdminPanel('menu')">
+                    <div class="admin-menu-icon" style="background:#FFE0B2;"><i class="fas fa-box"></i></div>
+                    <span>Kelola Menu</span><i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="admin-menu-item" onclick="openAdminPanel('ads')">
+                    <div class="admin-menu-icon" style="background:#FFCCBC;"><i class="fas fa-bullhorn"></i></div>
+                    <span>Kelola Iklan / Best Seller</span><i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="admin-menu-item" onclick="openAdminPanel('payment')">
+                    <div class="admin-menu-icon" style="background:#C8E6C9;"><i class="fas fa-credit-card"></i></div>
+                    <span>Pengaturan Pembayaran</span><i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="admin-menu-item" onclick="openAdminPanel('store')">
+                    <div class="admin-menu-icon" style="background:#BBDEFB;"><i class="fas fa-store"></i></div>
+                    <span>Alamat Toko</span><i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="admin-menu-item" onclick="openAdminPanel('reports')">
+                    <div class="admin-menu-icon" style="background:#F8BBD0;"><i class="fas fa-chart-line"></i></div>
+                    <span>Laporan Penjualan</span><i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </main>
+        <nav class="bottom-nav">
+            <div class="nav-item" onclick="switchTab('home', this)"><i class="fas fa-home"></i><span>Home</span></div>
+            <div class="nav-item" onclick="goToCart(this)"><i class="fas fa-shopping-bag"></i><span>Keranjang</span></div>
+            <div class="nav-item" onclick="switchTab('history', this)"><i class="fas fa-receipt"></i><span>Riwayat</span></div>
+            <div class="nav-item active" onclick="switchTab('admin', this)"><i class="fas fa-user-shield"></i><span>Admin</span></div>
+        </nav>
+    </div>
+
+    <!-- ===== PANEL KELOLA MENU ===== -->
+    <div id="panel-menu-screen" class="screen">
+        <header class="app-header-simple">
+            <i class="fas fa-arrow-left" onclick="switchTab('admin')"></i>
+            <h3>Kelola Menu</h3>
+            <i class="fas fa-plus" onclick="openAddProductModal()"></i>
+        </header>
+        <main class="app-content">
+            <div class="admin-product-list" id="admin-product-list"></div>
+        </main>
+    </div>
+
+    <!-- ===== PANEL IKLAN / BEST SELLER ===== -->
+    <div id="panel-ads-screen" class="screen">
+        <header class="app-header-simple">
+            <i class="fas fa-arrow-left" onclick="switchTab('admin')"></i>
+            <h3>Kelola Iklan</h3>
+            <div style="width: 20px;"></div>
+        </header>
+        <main class="app-content">
+            <p class="panel-desc">Pilih 3 produk untuk ditampilkan sebagai <strong>Best Seller</strong> di halaman utama.</p>
+            <div class="admin-product-list" id="admin-ads-list"></div>
+        </main>
+    </div>
+
+    <!-- ===== PANEL PEMBAYARAN ===== -->
+    <div id="panel-payment-screen" class="screen">
+        <header class="app-header-simple">
+            <i class="fas fa-arrow-left" onclick="switchTab('admin')"></i>
+            <h3>Pengaturan Pembayaran</h3>
+            <div style="width: 20px;"></div>
+        </header>
+        <main class="app-content">
+            <p class="panel-desc">Aktifkan / nonaktifkan metode pembayaran yang tersedia.</p>
+            <div class="toggle-list">
+                <div class="toggle-item">
+                    <div class="toggle-info"><i class="fas fa-money-bill-wave" style="color:#25D366;"></i><div><strong>Cash</strong><span>Bayar di tempat</span></div></div>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                <div class="toggle-item">
+                    <div class="toggle-info"><i class="fas fa-university" style="color:#607D8B;"></i><div><strong>Transfer Bank</strong><span>BCA, BNI, Mandiri</span></div></div>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                <div class="toggle-item">
+                    <div class="toggle-info"><i class="fas fa-qrcode" style="color:#E91E63;"></i><div><strong>QRIS</strong><span>Scan & Bayar</span></div></div>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                <div class="toggle-item">
+                    <div class="toggle-info"><i class="fas fa-wallet" style="color:#FF9800;"></i><div><strong>E-Wallet</strong><span>OVO, DANA, ShopeePay</span></div></div>
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== PANEL ALAMAT TOKO ===== -->
+    <div id="panel-store-screen" class="screen">
+        <header class="app-header-simple">
+            <i class="fas fa-arrow-left" onclick="switchTab('admin')"></i>
+            <h3>Alamat Toko</h3>
+            <div style="width: 20px;"></div>
+        </header>
+        <main class="app-content">
+            <div class="checkout-field">
+                <label>Nama Toko</label>
+                <input type="text" class="checkout-input" value="Sweet Crumbs">
+            </div>
+            <div class="checkout-field">
+                <label>Alamat Toko</label>
+                <textarea class="checkout-input checkout-textarea">Jl. Melati No. 12, Medan Kota, Sumatera Utara</textarea>
+            </div>
+            <div class="checkout-field">
+                <label>No. WhatsApp</label>
+                <input type="tel" class="checkout-input" value="+62 812-3456-7890">
+            </div>
+            <div class="checkout-field">
+                <label>Jam Operasional</label>
+                <input type="text" class="checkout-input" value="09.00 - 21.00 WIB">
+            </div>
+            <button class="admin-login-btn" onclick="alert('Alamat toko berhasil disimpan! ✅')">
+                <i class="fas fa-save"></i> Simpan
+            </button>
+        </main>
+    </div>
+
+    <!-- ===== PANEL LAPORAN ===== -->
+    <div id="panel-reports-screen" class="screen">
+        <header class="app-header-simple">
+            <i class="fas fa-arrow-left" onclick="switchTab('admin')"></i>
+            <h3>Laporan Penjualan</h3>
+            <div style="width: 20px;"></div>
+        </header>
+        <main class="app-content">
+            <div class="report-card">
+                <h4>Penjualan Bulan Ini</h4>
+                <h2>Rp 12.560.000</h2>
+                <p class="report-up"><i class="fas fa-arrow-up"></i> +18% dari bulan lalu</p>
+            </div>
+            <div class="report-chart">
+                <div class="bar" style="height: 40%;"><span>M1</span></div>
+                <div class="bar" style="height: 60%;"><span>M2</span></div>
+                <div class="bar" style="height: 35%;"><span>M3</span></div>
+                <div class="bar" style="height: 75%;"><span>M4</span></div>
+                <div class="bar" style="height: 90%;"><span>M5</span></div>
+                <div class="bar" style="height: 55%;"><span>M6</span></div>
+                <div class="bar" style="height: 70%;"><span>M7</span></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== MODAL TAMBAH ULASAN ===== -->
+    <div class="modal-overlay" id="review-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tulis Ulasanmu</h3>
+                <i class="fas fa-times" onclick="closeReviewModal()"></i>
+            </div>
+            <div class="modal-body">
+                <label class="modal-label">Nama Kamu</label>
+                <input type="text" id="review-name-input" class="modal-input" placeholder="Masukkan nama..." maxlength="20">
+                <label class="modal-label">Rating</label>
+                <div class="star-rating" id="star-rating">
+                    <i class="fas fa-star" data-rating="1"></i>
+                    <i class="fas fa-star" data-rating="2"></i>
+                    <i class="fas fa-star" data-rating="3"></i>
+                    <i class="fas fa-star" data-rating="4"></i>
+                    <i class="fas fa-star" data-rating="5"></i>
+                </div>
+                <label class="modal-label">Ulasan</label>
+                <textarea id="review-text-input" class="modal-input modal-textarea" placeholder="Ceritakan pengalamanmu..." maxlength="200"></textarea>
+                <label class="modal-label">Foto (opsional)</label>
+                <div class="photo-upload-wrapper">
+                    <input type="file" id="review-photo-input" accept="image/*" hidden onchange="previewPhoto(this)">
+                    <label for="review-photo-input" class="photo-upload-btn">
+                        <i class="fas fa-camera"></i><span>Pilih Foto</span>
+                    </label>
+                    <div class="photo-preview" id="photo-preview"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" onclick="closeReviewModal()">Batal</button>
+                <button class="btn-submit" onclick="submitReview()"><i class="fas fa-paper-plane"></i> Kirim</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL TAMBAH PRODUK ===== -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tambah Produk</h3>
+                <i class="fas fa-times" onclick="closeAddProductModal()"></i>
+            </div>
+            <div class="modal-body">
+                <label class="modal-label">Nama Produk</label>
+                <input type="text" id="new-prod-name" class="modal-input" placeholder="Contoh: Croffle Matcha">
+                <label class="modal-label">Harga</label>
+                <input type="number" id="new-prod-price" class="modal-input" placeholder="15000">
+                <label class="modal-label">Kategori</label>
+                <select id="new-prod-category" class="modal-input">
+                    <option>Croffle</option>
+                    <option>Dessert Box</option>
+                    <option>Minuman</option>
+                </select>
+                <label class="modal-label">URL Gambar</label>
+                <input type="text" id="new-prod-img" class="modal-input" placeholder="https://...">
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" onclick="closeAddProductModal()">Batal</button>
+                <button class="btn-submit" onclick="addNewProduct()"><i class="fas fa-plus"></i> Tambah</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
