@@ -1,31 +1,38 @@
-// --- NOMOR ADMIN (GANTI DENGAN NOMOR KAMU!) ---
-const ADMIN_PHONE = "6281234567890";
-const ADMIN_PHONE_DISPLAY = "+62 812-3456-7890";
-
-// --- ADMIN CREDENTIALS ---
-const ADMIN_USER = "admin";
-const ADMIN_PASS = "admin123";
+// --- ADMIN ---
+const ADMIN_PHONE = "6283138638544";
+const ADMIN_PHONE_DISPLAY = "083138638544";
+const ADMIN_USER = "sweet";
+const ADMIN_PASS = "sweet123";
 
 // --- DATA PRODUK ---
 let products = [
-    { id: 1, name: "Croffle Original", price: 15000, category: "Croffle", img: "https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Croffle renyah dengan topping butter dan gula pilihan." },
-    { id: 2, name: "Croffle Choco", price: 17000, category: "Croffle", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Croffle dengan lelehan cokelat premium." },
-    { id: 3, name: "Croffle Biscoff", price: 20000, category: "Croffle", img: "https://images.unsplash.com/photo-1618426703623-c1b335803e07?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Croffle dengan saus Biscoff legit." },
-    { id: 4, name: "Croffle Strawberry", price: 18000, category: "Croffle", img: "https://images.unsplash.com/photo-1587314168485-3236d6710814?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Croffle dengan stroberi segar." },
-    { id: 5, name: "Tiramisu Dessert Box", price: 25000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Dessert box lembut dengan rasa kopi dan mascarpone." },
-    { id: 6, name: "Oreo Dessert Box", price: 22000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Dessert box dengan crumble oreo." },
-    { id: 7, name: "Matcha Dessert Box", price: 22000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Dessert box matcha premium." },
-    { id: 8, name: "Red Velvet Dessert Box", price: 24000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1586985289906-406988974504?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Dessert box red velvet lembut." },
-    { id: 9,  name: "Iced Strawberry Latte", price: 18000, category: "Minuman", img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Minuman segar dengan susu dan stroberi asli." },
-    { id: 10, name: "Matcha Latte", price: 16000, category: "Minuman", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Matcha latte creamy." },
-    { id: 11, name: "Brown Sugar Milk", price: 17000, category: "Minuman", img: "https://images.unsplash.com/photo-1558857563-b371033873b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Brown sugar dengan susu segar." },
-    { id: 12, name: "Chocolate Milk", price: 15000, category: "Minuman", img: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80", desc: "Cokelat susu klasik." }
+    // CROFFLE
+    { id: 1, name: "Croffle Original", price: 15000, category: "Croffle", img: "https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle klasik dengan tekstur renyah di luar, lembut di dalam. Dibuat dari adonan croissant premium yang dipanggang sempurna.", hint: "Croffle hangat selalu jadi pilihan terbaik~" },
+    { id: 2, name: "Croffle Choco", price: 17000, category: "Croffle", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle dengan lelehan cokelat premium Belgia yang kaya rasa. Topping melimpah, cocok untuk pecinta cokelat sejati.", hint: "Manisnya cokelat bikin hari makin ceria 🍫" },
+    { id: 3, name: "Croffle Biscoff", price: 20000, category: "Croffle", img: "https://images.unsplash.com/photo-1618426703623-c1b335803e07?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle renyah dengan saus Lotus Biscoff legit dan crumble biscuit. Best seller sepanjang masa!", hint: "Legitnya Biscoff bikin susah move on ✨" },
+    { id: 4, name: "Croffle Strawberry", price: 18000, category: "Croffle", img: "https://images.unsplash.com/photo-1587314168485-3236d6710814?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle dengan topping stroberi segar dan whipped cream lembut. Kombinasi manis-asam menyegarkan.", hint: "Stroberi segar bikin makin manis 🍓" },
+    { id: 5, name: "Croffle Matcha", price: 19000, category: "Croffle", img: "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle dengan saus matcha premium dari Uji, Jepang. Rasa earthy elegan.", hint: "Matcha premium, rasa autentik Jepang 🍵" },
+    { id: 6, name: "Croffle Cheese", price: 19000, category: "Croffle", img: "https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle dengan saus keju creamy gurih-manis. Sensasi unik yang bikin ketagihan.", hint: "Gurih manis, kombinasi sempurna 🧀" },
+    
+    // DESSERT BOX
+    { id: 7, name: "Tiramisu Dessert Box", price: 25000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box premium dengan mascarpone lembut, kopi espresso, dan bubuk kakao. Resep autentik Italia.", hint: "Mewah dan lembut, dessert kelas restoran ✨" },
+    { id: 8, name: "Oreo Dessert Box", price: 22000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box dengan crumble oreo renyah, whipped cream, dan lelehan cokelat.", hint: "Crumble oreo bikin tiap sendok seru 🍪" },
+    { id: 9, name: "Matcha Dessert Box", price: 23000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box matcha premium creamy dengan cita rasa Jepang autentik.", hint: "Sensasi matcha Jepang yang otentik 🍵" },
+    { id: 10, name: "Red Velvet Dessert Box", price: 24000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1586985289906-406988974504?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box red velvet lembut dengan cream cheese frosting. Cantik dan elegan.", hint: "Cantik, lembut, dan romantis 💕" },
+    { id: 11, name: "Chocolate Dessert Box", price: 23000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box cokelat premium dengan ganache mewah yang meleleh di mulut.", hint: "Surga cokelat dalam satu kotak 🍫" },
+    { id: 12, name: "Fruit Dessert Box", price: 26000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box dengan aneka buah segar pilihan. Ringan dan menyegarkan.", hint: "Segar dengan buah asli pilihan 🍓🥝" },
+    
+    // MINUMAN
+    { id: 13, name: "Iced Strawberry Latte", price: 18000, category: "Minuman", img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Minuman segar dengan susu, saus stroberi asli, dan es batu. Cantik dan instagramable!", hint: "Segar dan cantik, pas buat cuaca panas 🍓" },
+    { id: 14, name: "Matcha Latte", price: 16000, category: "Minuman", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Matcha latte creamy dengan matcha premium Jepang dan susu segar.", hint: "Creamy matcha bikin hari makin tenang 🍵" },
+    { id: 15, name: "Brown Sugar Milk", price: 17000, category: "Minuman", img: "https://images.unsplash.com/photo-1558857563-b371033873b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Brown sugar premium dengan susu segar dan boba kenyal. Best seller!", hint: "Manisnya brown sugar + boba kenyal 🧋" },
+    { id: 16, name: "Chocolate Milk", price: 15000, category: "Minuman", img: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Cokelat susu klasik dengan cokelat premium dan susu segar.", hint: "Klasik dan menenangkan, selalu pas 🍫" },
+    { id: 17, name: "Iced Coffee Latte", price: 17000, category: "Minuman", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Espresso shot premium dengan susu segar dan es batu. Boost energi!", hint: "Kopi creamy, teman setia produktif ☕" },
+    { id: 18, name: "Thai Tea", price: 16000, category: "Minuman", img: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Thai tea autentik dengan teh hitam Thailand dan susu kental manis.", hint: "Autentik Thailand, manis dan creamy 🧡" }
 ];
 
-// --- BEST SELLER (ID produk yang jadi best seller) ---
-let bestSellerIds = [2, 5, 9];
+let bestSellerIds = [3, 7, 15];
 
-// --- DATA ULASAN ---
 let reviews = [
     { name: "Sarah Amelia", initial: "S", color: "#E91E63", rating: 5, date: "2 hari lalu", text: "Croffle-nya renyah banget! Topping cokelatnya melimpah, bikin nagih. Pasti repeat order! 🥰", photo: "https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
     { name: "Budi Santoso", initial: "B", color: "#3F51B5", rating: 5, date: "5 hari lalu", text: "Dessert box Tiramisu-nya juara! Rasanya pas, nggak terlalu manis.", photo: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
@@ -34,16 +41,13 @@ let reviews = [
     { name: "Rina Lestari", initial: "R", color: "#9C27B0", rating: 5, date: "3 minggu lalu", text: "Pesen buat acara keluarga, semua pada suka! ✨", photo: null }
 ];
 
-// --- DATA PESANAN (RIWAYAT) ---
+// Orders dengan items lengkap untuk struk
 let orders = [
-    { id: "#SC2410255", date: "25 Okt 2025", total: 42000, status: "selesai" },
-    { id: "#SC2410248", date: "24 Okt 2025", total: 38000, status: "dikirim" },
-    { id: "#SC2410240", date: "23 Okt 2025", total: 30000, status: "diproses" },
-    { id: "#SC2410232", date: "22 Okt 2025", total: 55000, status: "selesai" },
-    { id: "#SC2410225", date: "21 Okt 2025", total: 28000, status: "diproses" }
+    { id: "#AD92202149", date: "11 Okt 2026 11:16", buyerName: "caladac", buyerWA: "081234567890", method: "Delivery", kecamatan: "Kec. Medan Amplas", subtotal: 20000, shipping: 8000, total: 28000, status: "selesai", payment: "Cash / COD", items: [{name: "1x Dimsum Ayam", variant: "Chili Oil", price: 10000}, {name: "1x Dimsum Jamur", variant: "Chili Oil", price: 10000}] },
+    { id: "#SC2410248", date: "24 Okt 2025", buyerName: "Sarah Amelia", buyerWA: "081298765432", method: "PickUp", kecamatan: "-", subtotal: 38000, shipping: 0, total: 38000, status: "dikirim", payment: "Transfer", items: [{name: "1x Croffle Biscoff", variant: "", price: 20000}, {name: "1x Iced Strawberry Latte", variant: "", price: 18000}] },
+    { id: "#SC2410240", date: "23 Okt 2025", buyerName: "Budi Santoso", buyerWA: "085211223344", method: "Delivery", kecamatan: "Kec. Medan Johor", subtotal: 25000, shipping: 8000, total: 33000, status: "diproses", payment: "QRIS", items: [{name: "1x Tiramisu Dessert Box", variant: "", price: 25000}] }
 ];
 
-// --- STATE ---
 let cart = [];
 let detailQty = 1;
 let isDarkMode = false;
@@ -54,10 +58,11 @@ let selectedPhoto = null;
 let isAdminLoggedIn = false;
 let currentDelivery = 'Delivery';
 let currentPayment = 'Cash';
+let currentStrukOrder = null;
 
-// ==============================================
-// ===== NAVIGASI =====
-// ==============================================
+// ==========================================
+// NAVIGASI
+// ==========================================
 function switchTab(screenId, el) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     const target = document.getElementById(screenId + '-screen');
@@ -69,82 +74,65 @@ function switchTab(screenId, el) {
     }
 }
 
-function goToHome() {
-    switchTab('home');
-    renderCarousel();
-    renderReviews();
-}
+function goToHome() { switchTab('home'); renderCarousel(); renderReviews(); }
+function goToCart(el) { switchTab('cart', el); renderCart(); }
 
-function goToCart(el) {
-    switchTab('cart', el);
-    renderCart();
-}
-
-// ===== ADMIN ACCESS =====
+// ==========================================
+// ADMIN
+// ==========================================
 function goToAdmin(el) {
     if(el) {
         document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
         el.classList.add('active');
     }
-    if(isAdminLoggedIn) {
-        switchTab('admin');
-    } else {
-        switchTab('admin-login');
-    }
+    if(isAdminLoggedIn) { switchTab('admin'); renderAdminStats(); }
+    else switchTab('admin-login');
 }
 
 function loginAdmin() {
     const user = document.getElementById('admin-user').value.trim();
     const pass = document.getElementById('admin-pass').value.trim();
-    
     if(user === ADMIN_USER && pass === ADMIN_PASS) {
         isAdminLoggedIn = true;
         document.getElementById('admin-user').value = '';
         document.getElementById('admin-pass').value = '';
         switchTab('admin');
         renderAdminStats();
-    } else {
-        alert('❌ Username atau password salah!\n\nHint: admin / admin123');
-    }
+    } else alert('❌ Username atau password salah!\n\nHint: sweet / sweet123');
 }
 
 function logoutAdmin() {
-    if(confirm('Yakin ingin logout dari Admin?')) {
-        isAdminLoggedIn = false;
-        switchTab('home');
-    }
+    if(confirm('Yakin ingin logout?')) { isAdminLoggedIn = false; switchTab('home'); }
 }
 
+// REAL-TIME STATS
 function renderAdminStats() {
-    const statProducts = document.getElementById('stat-products');
-    const statOrders = document.getElementById('stat-orders');
-    if(statProducts) statProducts.textContent = products.length;
-    if(statOrders) statOrders.textContent = orders.length + 18; // Simulasi
+    document.getElementById('stat-products').textContent = products.length;
+    document.getElementById('stat-orders').textContent = orders.length;
+    
+    const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0);
+    document.getElementById('stat-revenue').textContent = "Rp " + totalRevenue.toLocaleString('id-ID');
+    
+    // Pelanggan unik
+    const uniqueCustomers = new Set(orders.map(o => o.buyerName || o.id)).size;
+    document.getElementById('stat-customers').textContent = uniqueCustomers;
+    
+    const reportTotal = document.getElementById('report-total');
+    if(reportTotal) reportTotal.textContent = "Rp " + totalRevenue.toLocaleString('id-ID');
 }
 
-// ===== ADMIN PANEL NAVIGASI =====
 function openAdminPanel(panel) {
-    if(panel === 'menu') {
-        renderAdminProducts();
-        switchTab('panel-menu');
-    } else if(panel === 'ads') {
-        renderAdminAds();
-        switchTab('panel-ads');
-    } else if(panel === 'payment') {
-        switchTab('panel-payment');
-    } else if(panel === 'store') {
-        switchTab('panel-store');
-    } else if(panel === 'reports') {
-        switchTab('panel-reports');
-    }
+    if(panel === 'menu') { renderAdminProducts(); switchTab('panel-menu'); }
+    else if(panel === 'ads') { renderAdminAds(); switchTab('panel-ads'); }
+    else if(panel === 'payment') switchTab('panel-payment');
+    else if(panel === 'store') switchTab('panel-store');
+    else if(panel === 'reports') { renderAdminStats(); switchTab('panel-reports'); }
 }
 
-// ===== KELOLA MENU =====
 function renderAdminProducts() {
     const container = document.getElementById('admin-product-list');
     if(!container) return;
     container.innerHTML = '';
-    
     products.forEach(p => {
         const div = document.createElement('div');
         div.className = 'admin-product-item';
@@ -165,56 +153,40 @@ function renderAdminProducts() {
 }
 
 function deleteProduct(id) {
-    if(confirm('Yakin ingin menghapus produk ini?')) {
+    if(confirm('Hapus produk ini?')) {
         products = products.filter(p => p.id !== id);
-        renderAdminProducts();
-        renderAdminStats();
-        alert('✅ Produk berhasil dihapus!');
+        renderAdminProducts(); renderAdminStats();
+        alert('✅ Produk dihapus!');
     }
 }
 
 function editProduct(id) {
     const p = products.find(x => x.id === id);
-    const newName = prompt('Nama produk:', p.name);
-    if(newName === null) return;
-    const newPrice = prompt('Harga:', p.price);
-    if(newPrice === null) return;
-    p.name = newName;
-    p.price = parseInt(newPrice) || p.price;
-    renderAdminProducts();
-    alert('✅ Produk berhasil diupdate!');
+    const newName = prompt('Nama produk:', p.name); if(newName === null) return;
+    const newPrice = prompt('Harga:', p.price); if(newPrice === null) return;
+    p.name = newName; p.price = parseInt(newPrice) || p.price;
+    renderAdminProducts(); alert('✅ Produk diupdate!');
 }
 
-function openAddProductModal() {
-    document.getElementById('product-modal').classList.add('active');
-}
-
-function closeAddProductModal() {
-    document.getElementById('product-modal').classList.remove('active');
-}
+function openAddProductModal() { document.getElementById('product-modal').classList.add('active'); }
+function closeAddProductModal() { document.getElementById('product-modal').classList.remove('active'); }
 
 function addNewProduct() {
     const name = document.getElementById('new-prod-name').value.trim();
     const price = parseInt(document.getElementById('new-prod-price').value);
     const category = document.getElementById('new-prod-category').value;
-    const img = document.getElementById('new-prod-img').value.trim() || "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80";
-    
+    const img = document.getElementById('new-prod-img').value.trim() || "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80";
     if(!name || !price) { alert('Nama & harga harus diisi!'); return; }
-    
     const newId = Math.max(...products.map(p => p.id)) + 1;
-    products.push({ id: newId, name, price, category, img, desc: "Produk baru dari Sweet Crumbs" });
-    renderAdminProducts();
-    renderAdminStats();
-    closeAddProductModal();
-    alert('✅ Produk berhasil ditambahkan!');
+    products.push({ id: newId, name, price, category, img, desc: "Produk baru dari Sweet Crumbs", hint: "Yuk coba produk baru ini~" });
+    renderAdminProducts(); renderAdminStats(); closeAddProductModal();
+    alert('✅ Produk ditambahkan!');
 }
 
-// ===== KELOLA IKLAN (BEST SELLER) =====
 function renderAdminAds() {
     const container = document.getElementById('admin-ads-list');
     if(!container) return;
     container.innerHTML = '';
-    
     products.forEach(p => {
         const isActive = bestSellerIds.includes(p.id);
         const div = document.createElement('div');
@@ -237,28 +209,25 @@ function renderAdminAds() {
 }
 
 function toggleBestSeller(id) {
-    if(bestSellerIds.includes(id)) {
-        bestSellerIds = bestSellerIds.filter(x => x !== id);
-    } else {
-        if(bestSellerIds.length >= 3) {
-            alert('⚠️ Maksimal 3 produk Best Seller!');
-            return;
-        }
+    if(bestSellerIds.includes(id)) bestSellerIds = bestSellerIds.filter(x => x !== id);
+    else {
+        if(bestSellerIds.length >= 3) { alert('⚠️ Maksimal 3!'); return; }
         bestSellerIds.push(id);
     }
-    renderAdminAds();
+    renderAdminAds(); renderCarousel();
 }
 
-// ===== CHECKOUT: PILIH DELIVERY & PAYMENT =====
+// ==========================================
+// CHECKOUT
+// ==========================================
 function selectDelivery(type, el) {
     currentDelivery = type;
     document.querySelectorAll('.delivery-card').forEach(c => c.classList.remove('active'));
     el.classList.add('active');
     
-    const shipping = document.getElementById('checkout-shipping');
-    if(shipping) {
-        shipping.textContent = (type === 'PickUp') ? '—' : 'Rp 10.000';
-    }
+    document.getElementById('store-info').classList.toggle('hidden', type !== 'PickUp');
+    document.getElementById('address-fields').classList.toggle('hidden', type === 'PickUp');
+    
     updateCheckoutTotal();
 }
 
@@ -266,44 +235,107 @@ function selectPayment(type, el) {
     currentPayment = type;
     document.querySelectorAll('.payment-card').forEach(c => c.classList.remove('active'));
     el.classList.add('active');
+    document.getElementById('payment-info-cash').classList.toggle('hidden', type !== 'Cash');
+    document.getElementById('payment-info-transfer').classList.toggle('hidden', type !== 'Transfer');
+    document.getElementById('payment-info-qris').classList.toggle('hidden', type !== 'QRIS');
+}
+
+function copyText(text, btn) {
+    navigator.clipboard.writeText(text);
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
+    setTimeout(() => btn.innerHTML = original, 1500);
+}
+
+function previewTransferProof(input) {
+    if(input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            document.getElementById('transfer-preview').innerHTML = `<img src="${e.target.result}">`;
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function previewQrisProof(input) {
+    if(input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            document.getElementById('qris-preview').innerHTML = `<img src="${e.target.result}">`;
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
 }
 
 function updateCheckoutTotal() {
     let subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
     let shipping = (currentDelivery === 'PickUp') ? 0 : 10000;
     let total = subtotal + shipping;
-    
     document.getElementById('checkout-subtotal').textContent = "Rp " + subtotal.toLocaleString('id-ID');
     document.getElementById('checkout-shipping').textContent = shipping === 0 ? '—' : 'Rp ' + shipping.toLocaleString('id-ID');
     document.getElementById('checkout-total').textContent = "Rp " + total.toLocaleString('id-ID');
     document.getElementById('btn-total').textContent = "Rp " + total.toLocaleString('id-ID');
 }
 
-// ===== CHECKOUT =====
 function goToCheckout() {
     if(cart.length === 0) { alert("Keranjang masih kosong!"); return; }
     switchTab('checkout');
+    selectDelivery('Delivery', document.querySelectorAll('.delivery-card')[0]);
+    selectPayment('Cash', document.querySelectorAll('.payment-card')[0]);
     updateCheckoutTotal();
 }
 
-function showHistory() {
-    // Tambah order baru ke riwayat
-    const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+// ==========================================
+// CREATE ORDER (REAL-TIME)
+// ==========================================
+function createOrder() {
+    const buyerName = document.getElementById('buyer-name').value.trim() || "Anonim";
+    const buyerWA = document.getElementById('buyer-wa').value.trim() || "-";
+    const kecamatan = document.getElementById('kecamatan-select').value || "-";
+    
+    let subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    let shipping = (currentDelivery === 'PickUp') ? 0 : 8000;
+    let total = subtotal + shipping;
+    
+    const items = cart.map(item => ({
+        name: `${item.qty}x ${item.name}`,
+        variant: "",
+        price: item.price * item.qty
+    }));
+    
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }) + ' ' + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+    
     const newOrder = {
-        id: "#SC" + Math.floor(Math.random() * 9000000 + 1000000),
-        date: new Date().toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }),
+        id: "#AD" + Math.floor(Math.random() * 90000000 + 10000000),
+        date: dateStr,
+        buyerName: buyerName,
+        buyerWA: buyerWA,
+        method: currentDelivery,
+        kecamatan: currentDelivery === 'PickUp' ? '-' : kecamatan,
+        subtotal: subtotal,
+        shipping: shipping,
         total: total,
-        status: "diproses"
+        status: "diproses",
+        payment: currentPayment === 'Cash' ? 'Cash / COD' : currentPayment,
+        items: items
     };
+    
     orders.unshift(newOrder);
+    cart = [];
+    
+    // ✅ Tampilkan struk langsung
+    showStruk(newOrder.id);
+    
+    // ✅ Update admin stats real-time
+    renderAdminStats();
     
     alert("✅ Pesanan berhasil dibuat!\n\nStatus: Sedang Diproses");
-    cart = [];
-    switchTab('history');
-    renderHistory('all');
 }
 
-// ===== RIWAYAT DENGAN FILTER =====
+// ==========================================
+// RIWAYAT (STRUK CARD)
+// ==========================================
 function filterHistory(status, el) {
     document.querySelectorAll('.history-tabs span').forEach(s => s.classList.remove('active'));
     el.classList.add('active');
@@ -314,29 +346,124 @@ function renderHistory(filter = 'all') {
     const container = document.getElementById('history-list');
     if(!container) return;
     container.innerHTML = '';
-    
     const filtered = (filter === 'all') ? orders : orders.filter(o => o.status === filter);
-    
     if(filtered.length === 0) {
         container.innerHTML = '<p style="text-align:center;color:#999;padding:30px;">Belum ada pesanan</p>';
         return;
     }
-    
     filtered.forEach(o => {
         const div = document.createElement('div');
-        div.className = 'history-card';
+        div.className = 'history-struk';
+        div.onclick = () => showStruk(o.id);
         div.innerHTML = `
-            <div class="history-header">
-                <span>${o.id}</span>
-                <span class="status ${o.status}">${o.status.charAt(0).toUpperCase() + o.status.slice(1)}</span>
+            <div class="history-struk-header">
+                <div class="history-struk-brand">Arasy Dimsum</div>
+                <div class="history-struk-date">${o.date}</div>
             </div>
-            <p>${o.date} - Rp ${o.total.toLocaleString('id-ID')}</p>
+            <div class="history-struk-info">
+                <span>No. Pesanan</span>
+                <strong>${o.id}</strong>
+            </div>
+            <div class="history-struk-info">
+                <span>Atas Nama</span>
+                <strong>${o.buyerName || '-'}</strong>
+            </div>
+            <div class="history-struk-info">
+                <span>Metode</span>
+                <strong>${o.method}</strong>
+            </div>
+            <div class="history-struk-footer">
+                <span class="struk-status-badge ${o.status}">${o.status.toUpperCase()}</span>
+                <span class="history-struk-total">Rp ${o.total.toLocaleString('id-ID')}</span>
+            </div>
         `;
         container.appendChild(div);
     });
 }
 
-// ===== DROPDOWN =====
+// ==========================================
+// STRUK DETAIL
+// ==========================================
+function showStruk(orderId) {
+    const order = orders.find(o => o.id === orderId);
+    if(!order) return;
+    currentStrukOrder = order;
+    
+    const itemsHtml = order.items.map(item => `
+        <div class="struk-item">
+            <span class="struk-item-name">${item.name}${item.variant ? '<br><small style="color:#E91E63;font-size:0.7rem;">🌶️ ' + item.variant + '</small>' : ''}</span>
+            <span class="struk-item-price">Rp ${item.price.toLocaleString('id-ID')}</span>
+        </div>
+    `).join('');
+    
+    document.getElementById('struk-paper').innerHTML = `
+        <div class="struk-brand">Arasy Dimsum</div>
+        <div class="struk-brand-sub">Struk Pembelian</div>
+        <div class="struk-divider"></div>
+        <div class="struk-row"><span>No. Pesanan</span><span>${order.id}</span></div>
+        <div class="struk-row"><span>Tanggal</span><span>${order.date}</span></div>
+        <div class="struk-row"><span>Atas Nama</span><span>${order.buyerName}</span></div>
+        <div class="struk-row"><span>Metode</span><span>${order.method}</span></div>
+        <div class="struk-row"><span>Kecamatan</span><span>${order.kecamatan || '-'}</span></div>
+        <div class="struk-divider"></div>
+        <div class="struk-items-title">Detail Pesanan</div>
+        ${itemsHtml}
+        <div class="struk-divider"></div>
+        <div class="struk-row"><span>Subtotal</span><span>Rp ${order.subtotal.toLocaleString('id-ID')}</span></div>
+        <div class="struk-row"><span>Ongkos Kirim</span><span>Rp ${order.shipping.toLocaleString('id-ID')}</span></div>
+        <div class="struk-total-row">
+            <span>Total</span>
+            <span>Rp ${order.total.toLocaleString('id-ID')}</span>
+        </div>
+        <div class="struk-row" style="margin-top:8px;"><span>Pembayaran</span><span>${order.payment}</span></div>
+        <div class="struk-divider"></div>
+        <div class="struk-stamp">PESANAN DITERIMA</div>
+        <div class="struk-thanks">Simpan struk ini sebagai bukti pemesanan</div>
+        <div class="struk-thanks">Terima kasih sudah memesan di Arasy Dimsum 🍊🎉</div>
+    `;
+    
+    switchTab('struk');
+}
+
+function printStruk() {
+    if(!currentStrukOrder) return;
+    // Buka window print dengan struk
+    const strukHTML = document.getElementById('struk-paper').innerHTML;
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(`
+        <html>
+        <head>
+            <title>Struk-${currentStrukOrder.id}</title>
+            <style>
+                body { font-family: 'Courier New', monospace; padding: 20px; background: white; }
+                .struk-brand { font-size: 1.8rem; color: #A21C2C; text-align: center; font-weight: 700; font-style: italic; margin-bottom: 5px; }
+                .struk-brand-sub { text-align: center; font-size: 0.75rem; color: #999; margin-bottom: 15px; }
+                .struk-divider { border-top: 1px dashed #999; margin: 12px 0; }
+                .struk-row, .struk-item { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 5px; }
+                .struk-items-title { font-weight: 700; margin-bottom: 8px; }
+                .struk-total-row { display: flex; justify-content: space-between; font-weight: 700; color: #A21C2C; font-size: 1rem; border-top: 2px dashed #999; padding-top: 8px; margin-top: 8px; }
+                .struk-stamp { text-align: center; border: 2px solid #2E7D32; color: #2E7D32; padding: 8px; margin: 20px 0; font-weight: 700; letter-spacing: 2px; }
+                .struk-thanks { text-align: center; font-size: 0.75rem; color: #666; margin-top: 8px; font-style: italic; }
+                .struk-paper { max-width: 380px; margin: 0 auto; background: white; padding: 25px; }
+            </style>
+        </head>
+        <body>
+            <div class="struk-paper">${strukHTML}</div>
+            <script>window.onload = () => { window.print(); setTimeout(() => window.close(), 500); }<\/script>
+        </body>
+        </html>
+    `);
+    printWindow.document.close();
+}
+
+function newOrderFromStruk() {
+    switchTab('home');
+    renderCarousel();
+}
+
+// ==========================================
+// DROPDOWN
+// ==========================================
 function toggleDropdown(event) {
     event.stopPropagation();
     document.getElementById('dropdown-menu').classList.toggle('active');
@@ -358,35 +485,26 @@ function toggleDarkMode() {
     localStorage.setItem('darkMode', isDarkMode);
 }
 
-function goToAbout() {
-    document.getElementById('dropdown-menu').classList.remove('active');
-    switchTab('about');
-}
-
-function goToHelp() {
-    document.getElementById('dropdown-menu').classList.remove('active');
-    switchTab('help');
-}
+function goToAbout() { document.getElementById('dropdown-menu').classList.remove('active'); switchTab('about'); }
+function goToHelp() { document.getElementById('dropdown-menu').classList.remove('active'); switchTab('help'); }
 
 function chatAdmin() {
     const pesan = encodeURIComponent("Halo Admin Sweet Crumbs! 👋\n\nSaya ingin bertanya tentang produk Anda.");
     window.open(`https://wa.me/${ADMIN_PHONE}?text=${pesan}`, '_blank');
 }
 function callAdmin() { window.location.href = `tel:+${ADMIN_PHONE}`; }
-function emailAdmin() { window.location.href = "mailto:hello@sweetcrumbs.id?subject=Pertanyaan%20dari%20Aplikasi%20Sweet%20Crumbs"; }
 function toggleFaq(el) { el.classList.toggle('open'); }
 
-// ===== CAROUSEL =====
+// ==========================================
+// CAROUSEL
+// ==========================================
 function renderCarousel() {
     const track = document.getElementById('carousel-track');
     const dotsContainer = document.getElementById('carousel-dots');
     if(!track) return;
-    track.innerHTML = '';
-    dotsContainer.innerHTML = '';
-    
+    track.innerHTML = ''; dotsContainer.innerHTML = '';
     const bsProducts = bestSellerIds.map(id => products.find(p => p.id === id)).filter(Boolean);
     const badges = ["BEST SELLER", "TOP RATED", "NEW FAVORITE"];
-    
     bsProducts.forEach((item, index) => {
         const card = document.createElement('div');
         card.className = 'carousel-card';
@@ -394,7 +512,7 @@ function renderCarousel() {
             <div class="carousel-card-info">
                 <span class="carousel-badge">${badges[index] || 'BEST SELLER'}</span>
                 <h3>${item.name}</h3>
-                <p>${item.desc}</p>
+                <p>${item.desc.substring(0, 80)}...</p>
                 <span class="price-tag">Rp ${item.price.toLocaleString('id-ID')}</span>
             </div>
             <img src="${item.img}" alt="${item.name}" class="carousel-card-img">
@@ -424,25 +542,23 @@ function startCarousel() {
     }, 3500);
 }
 
-// ===== PRODUK =====
+// ==========================================
+// PRODUK
+// ==========================================
 function renderProducts(category) {
     const container = document.getElementById('product-list');
     const title = document.getElementById('category-title');
     const sub = document.getElementById('category-sub');
     if(!container) return;
-    
     const subs = {
         'Croffle': 'Pilihan croffle terbaik untukmu',
         'Dessert Box': 'Dessert box premium dengan berbagai rasa',
         'Minuman': 'Minuman segar pendamping dessert'
     };
-    
     title.textContent = category;
     sub.textContent = subs[category] || '';
     container.innerHTML = '';
-    
-    const filtered = products.filter(p => p.category === category);
-    filtered.forEach((product, index) => {
+    products.filter(p => p.category === category).forEach((product, index) => {
         const card = document.createElement('div');
         card.className = 'product-card';
         card.style.animationDelay = (index * 0.1) + 's';
@@ -470,12 +586,13 @@ function closeProducts() {
     document.querySelectorAll('.cat-item').forEach(item => item.classList.remove('active'));
 }
 
-// ===== ULASAN =====
+// ==========================================
+// ULASAN
+// ==========================================
 function renderReviews() {
     const container = document.getElementById('review-list');
     if(!container) return;
     container.innerHTML = '';
-    
     reviews.forEach((review, index) => {
         const card = document.createElement('div');
         card.className = 'review-card';
@@ -483,7 +600,6 @@ function renderReviews() {
         let stars = '';
         for(let i = 0; i < 5; i++) stars += i < review.rating ? '★' : '☆';
         const photoHtml = review.photo ? `<div class="review-photo-wrapper"><img src="${review.photo}" class="review-photo"></div>` : '';
-        
         card.innerHTML = `
             <div class="review-header">
                 <div class="review-avatar" style="background: ${review.color};">${review.initial}</div>
@@ -537,19 +653,19 @@ function submitReview() {
     const name = document.getElementById('review-name-input').value.trim() || "Anonim";
     const text = document.getElementById('review-text-input').value.trim();
     if(!text) { alert('Ulasan tidak boleh kosong!'); return; }
-    
     const colors = ["#E91E63", "#3F51B5", "#FF9800", "#4CAF50", "#9C27B0", "#00BCD4"];
     reviews.unshift({
         name, initial: name.charAt(0).toUpperCase(),
         color: colors[Math.floor(Math.random() * colors.length)],
         rating: selectedRating, date: "Baru saja", text, photo: selectedPhoto
     });
-    renderReviews();
-    closeReviewModal();
+    renderReviews(); closeReviewModal();
     alert('Terima kasih atas ulasanmu! 💕');
 }
 
-// ===== DETAIL PRODUK =====
+// ==========================================
+// DETAIL PRODUK
+// ==========================================
 function showDetail(productId) {
     const product = products.find(p => p.id === productId);
     const container = document.getElementById('detail-content');
@@ -558,14 +674,9 @@ function showDetail(productId) {
         <img src="${product.img}" alt="${product.name}" class="detail-img-large">
         <h2 class="detail-title">${product.name}</h2>
         <p class="detail-price">Rp ${product.price.toLocaleString('id-ID')}</p>
-        <p class="detail-desc">${product.desc}</p>
-        <h4 style="margin-bottom:10px; font-size:0.9rem;">Varian</h4>
-        <div class="variant-options">
-            <button class="variant-btn active">Original</button>
-            <button class="variant-btn">Choco</button>
-            <button class="variant-btn">Biscoff</button>
-        </div>
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <div class="detail-desc-box"><p class="detail-desc">${product.desc}</p></div>
+        <div class="sweet-hint"><i class="fas fa-heart"></i><span>${product.hint}</span></div>
+        <div class="qty-row">
             <h4 style="font-size:0.9rem;">Jumlah</h4>
             <div class="qty-selector">
                 <button class="qty-btn" onclick="changeQty(-1)">-</button>
@@ -584,7 +695,9 @@ function changeQty(change) {
     document.getElementById('detail-qty').innerText = detailQty;
 }
 
-// ===== KERANJANG =====
+// ==========================================
+// KERANJANG
+// ==========================================
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     const existing = cart.find(item => item.id === productId);
@@ -634,7 +747,9 @@ function updateCartQty(index, change) {
     renderCart();
 }
 
-// ===== INIT =====
+// ==========================================
+// INIT
+// ==========================================
 window.addEventListener('load', () => {
     if(localStorage.getItem('darkMode') === 'true') {
         isDarkMode = true;
