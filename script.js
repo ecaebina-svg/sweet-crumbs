@@ -1,38 +1,134 @@
-// --- ADMIN ---
+// --- KONFIGURASI ADMIN ---
 const ADMIN_PHONE = "6283138638544";
 const ADMIN_PHONE_DISPLAY = "083138638544";
 const ADMIN_USER = "sweet";
 const ADMIN_PASS = "sweet123";
 
-// --- DATA PRODUK ---
+// --- BRAND TOKO (GANTI DI SINI KALAU MAU GANTI NAMA) ---
+const STORE_NAME = "Sweet Crumbs";
+const STORE_TAGLINE = "Sweet Moments, In Every Bite";
+
+// --- DATA PRODUK (6 per kategori, sesuai gambar) ---
 let products = [
-    // CROFFLE
-    { id: 1, name: "Croffle Original", price: 15000, category: "Croffle", img: "https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle klasik dengan tekstur renyah di luar, lembut di dalam. Dibuat dari adonan croissant premium yang dipanggang sempurna.", hint: "Croffle hangat selalu jadi pilihan terbaik~" },
-    { id: 2, name: "Croffle Choco", price: 17000, category: "Croffle", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle dengan lelehan cokelat premium Belgia yang kaya rasa. Topping melimpah, cocok untuk pecinta cokelat sejati.", hint: "Manisnya cokelat bikin hari makin ceria 🍫" },
-    { id: 3, name: "Croffle Biscoff", price: 20000, category: "Croffle", img: "https://images.unsplash.com/photo-1618426703623-c1b335803e07?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle renyah dengan saus Lotus Biscoff legit dan crumble biscuit. Best seller sepanjang masa!", hint: "Legitnya Biscoff bikin susah move on ✨" },
-    { id: 4, name: "Croffle Strawberry", price: 18000, category: "Croffle", img: "https://images.unsplash.com/photo-1587314168485-3236d6710814?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle dengan topping stroberi segar dan whipped cream lembut. Kombinasi manis-asam menyegarkan.", hint: "Stroberi segar bikin makin manis 🍓" },
-    { id: 5, name: "Croffle Matcha", price: 19000, category: "Croffle", img: "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle dengan saus matcha premium dari Uji, Jepang. Rasa earthy elegan.", hint: "Matcha premium, rasa autentik Jepang 🍵" },
-    { id: 6, name: "Croffle Cheese", price: 19000, category: "Croffle", img: "https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Croffle dengan saus keju creamy gurih-manis. Sensasi unik yang bikin ketagihan.", hint: "Gurih manis, kombinasi sempurna 🧀" },
+    // ============ CROFFLE (6 produk) ============
+    { 
+        id: 1, name: "Croffle Original", price: 15000, category: "Croffle", 
+        img: "https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Croffle klasik dengan tekstur renyah di luar, lembut di dalam. Dibuat dari adonan croissant premium yang dipanggang sempurna, lalu ditaburi gula halus dan butter wangi. Rasa original yang bikin kamu ingat rasa rumahan.", 
+        hint: "Croffle hangat selalu jadi pilihan terbaik~"
+    },
+    { 
+        id: 2, name: "Croffle Choco", price: 17000, category: "Croffle", 
+        img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Croffle dengan lelehan cokelat premium Belgia yang kaya rasa. Setiap gigitan menghadirkan sensasi manis yang meleleh di mulut. Topping cokelat melimpah, cocok untuk pecinta cokelat sejati.", 
+        hint: "Manisnya cokelat bikin hari makin ceria 🍫"
+    },
+    { 
+        id: 3, name: "Croffle Biscoff", price: 20000, category: "Croffle", 
+        img: "https://images.unsplash.com/photo-1618426703623-c1b335803e07?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Perpaduan croffle renyah dengan saus Lotus Biscoff yang legit dan crumble biscuit di atasnya. Rasa karamel-spiced yang khas bikin setiap gigitan terasa spesial. Best seller sepanjang masa!", 
+        hint: "Legitnya Biscoff bikin susah move on ✨"
+    },
+    { 
+        id: 4, name: "Croffle Strawberry", price: 18000, category: "Croffle", 
+        img: "https://images.unsplash.com/photo-1587314168485-3236d6710814?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Croffle dengan topping stroberi segar pilihan dan whipped cream lembut. Kombinasi manis-asam yang menyegarkan, cocok untuk kamu yang suka dessert fruity.", 
+        hint: "Stroberi segar bikin makin manis 🍓"
+    },
+    { 
+        id: 5, name: "Croffle Matcha", price: 19000, category: "Croffle", 
+        img: "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Croffle dengan saus matcha premium dari Uji, Jepang. Rasa earthy dan sedikit pahit yang berpadu dengan manisnya croffle, menciptakan harmoni rasa yang elegan.", 
+        hint: "Matcha premium, rasa autentik Jepang 🍵"
+    },
+    { 
+        id: 6, name: "Croffle Cheese", price: 19000, category: "Croffle", 
+        img: "https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Croffle dengan saus keju creamy yang gurih dan manis. Topping keju melimpah dengan taburan gula halus. Sensasi unik gurih-manis yang bikin ketagihan.", 
+        hint: "Gurih manis, kombinasi sempurna 🧀"
+    },
     
-    // DESSERT BOX
-    { id: 7, name: "Tiramisu Dessert Box", price: 25000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box premium dengan mascarpone lembut, kopi espresso, dan bubuk kakao. Resep autentik Italia.", hint: "Mewah dan lembut, dessert kelas restoran ✨" },
-    { id: 8, name: "Oreo Dessert Box", price: 22000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box dengan crumble oreo renyah, whipped cream, dan lelehan cokelat.", hint: "Crumble oreo bikin tiap sendok seru 🍪" },
-    { id: 9, name: "Matcha Dessert Box", price: 23000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box matcha premium creamy dengan cita rasa Jepang autentik.", hint: "Sensasi matcha Jepang yang otentik 🍵" },
-    { id: 10, name: "Red Velvet Dessert Box", price: 24000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1586985289906-406988974504?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box red velvet lembut dengan cream cheese frosting. Cantik dan elegan.", hint: "Cantik, lembut, dan romantis 💕" },
-    { id: 11, name: "Chocolate Dessert Box", price: 23000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box cokelat premium dengan ganache mewah yang meleleh di mulut.", hint: "Surga cokelat dalam satu kotak 🍫" },
-    { id: 12, name: "Fruit Dessert Box", price: 26000, category: "Dessert Box", img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Dessert box dengan aneka buah segar pilihan. Ringan dan menyegarkan.", hint: "Segar dengan buah asli pilihan 🍓🥝" },
+    // ============ DESSERT BOX (6 produk) ============
+    { 
+        id: 7, name: "Tiramisu Dessert Box", price: 25000, category: "Dessert Box", 
+        img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Dessert box premium dengan lapisan mascarpone lembut, kopi espresso, dan bubuk kakao. Dibuat dengan resep autentik Italia, menghadirkan rasa mewah dalam setiap sendokan.", 
+        hint: "Mewah dan lembut, dessert kelas restoran ✨"
+    },
+    { 
+        id: 8, name: "Oreo Dessert Box", price: 22000, category: "Dessert Box", 
+        img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Dessert box dengan crumble oreo renyah, whipped cream lembut, dan lelehan cokelat. Setiap layer memberikan tekstur berbeda yang bikin kamu terus ingin menikmatinya.", 
+        hint: "Crumble oreo bikin tiap sendok seru 🍪"
+    },
+    { 
+        id: 9, name: "Matcha Dessert Box", price: 23000, category: "Dessert Box", 
+        img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Dessert box dengan lapisan matcha premium yang creamy dan lembut. Rasa earthy matcha berpadu sempurna dengan manisnya cream. Cocok untuk pencinta matcha.", 
+        hint: "Sensasi matcha Jepang yang otentik 🍵"
+    },
+    { 
+        id: 10, name: "Red Velvet Dessert Box", price: 24000, category: "Dessert Box", 
+        img: "https://images.unsplash.com/photo-1586985289906-406988974504?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Dessert box dengan lapisan red velvet lembut dan cream cheese frosting yang gurih-manis. Warna merahnya cantik, rasanya elegan. Pilihan tepat untuk momen spesial.", 
+        hint: "Cantik, lembut, dan romantis 💕"
+    },
+    { 
+        id: 11, name: "Chocolate Dessert Box", price: 23000, category: "Dessert Box", 
+        img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Dessert box dengan lapisan cokelat premium dan ganache mewah. Setiap sendokan menghadirkan sensasi cokelat yang intense dan meleleh di mulut.", 
+        hint: "Surga cokelat dalam satu kotak 🍫"
+    },
+    { 
+        id: 12, name: "Fruit Dessert Box", price: 26000, category: "Dessert Box", 
+        img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Dessert box dengan aneka buah segar pilihan seperti stroberi, kiwi, anggur, dan blueberry di atas whipped cream lembut. Segar, sehat, dan tetap manis.", 
+        hint: "Segar dengan buah asli pilihan 🍓🥝"
+    },
     
-    // MINUMAN
-    { id: 13, name: "Iced Strawberry Latte", price: 18000, category: "Minuman", img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Minuman segar dengan susu, saus stroberi asli, dan es batu. Cantik dan instagramable!", hint: "Segar dan cantik, pas buat cuaca panas 🍓" },
-    { id: 14, name: "Matcha Latte", price: 16000, category: "Minuman", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Matcha latte creamy dengan matcha premium Jepang dan susu segar.", hint: "Creamy matcha bikin hari makin tenang 🍵" },
-    { id: 15, name: "Brown Sugar Milk", price: 17000, category: "Minuman", img: "https://images.unsplash.com/photo-1558857563-b371033873b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Brown sugar premium dengan susu segar dan boba kenyal. Best seller!", hint: "Manisnya brown sugar + boba kenyal 🧋" },
-    { id: 16, name: "Chocolate Milk", price: 15000, category: "Minuman", img: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Cokelat susu klasik dengan cokelat premium dan susu segar.", hint: "Klasik dan menenangkan, selalu pas 🍫" },
-    { id: 17, name: "Iced Coffee Latte", price: 17000, category: "Minuman", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Espresso shot premium dengan susu segar dan es batu. Boost energi!", hint: "Kopi creamy, teman setia produktif ☕" },
-    { id: 18, name: "Thai Tea", price: 16000, category: "Minuman", img: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", desc: "Thai tea autentik dengan teh hitam Thailand dan susu kental manis.", hint: "Autentik Thailand, manis dan creamy 🧡" }
+    // ============ MINUMAN (6 produk) ============
+    { 
+        id: 13, name: "Iced Strawberry Latte", price: 18000, category: "Minuman", 
+        img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Minuman segar dengan susu segar, saus stroberi asli, dan es batu. Rasa manis-asam yang menyegarkan, cocok diminum saat cuaca panas. Warnanya cantik pink, instagramable banget!", 
+        hint: "Segar dan cantik, pas buat cuaca panas 🍓"
+    },
+    { 
+        id: 14, name: "Matcha Latte", price: 16000, category: "Minuman", 
+        img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Matcha latte creamy dengan matcha grade premium dari Jepang dan susu segar. Rasa earthy matcha berpadu sempurna dengan manisnya susu.", 
+        hint: "Creamy matcha bikin hari makin tenang 🍵"
+    },
+    { 
+        id: 15, name: "Brown Sugar Milk", price: 17000, category: "Minuman", 
+        img: "https://images.unsplash.com/photo-1558857563-b371033873b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Minuman dengan brown sugar premium, susu segar, dan boba kenyal. Rasa karamel manis dari brown sugar berpadu dengan lembutnya susu.", 
+        hint: "Manisnya brown sugar + boba kenyal 🧋"
+    },
+    { 
+        id: 16, name: "Chocolate Milk", price: 15000, category: "Minuman", 
+        img: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Cokelat susu klasik dengan cokelat premium dan susu segar. Rasa cokelat yang kaya dan creamy, disukai semua kalangan.", 
+        hint: "Klasik dan menenangkan, selalu pas 🍫"
+    },
+    { 
+        id: 17, name: "Iced Coffee Latte", price: 17000, category: "Minuman", 
+        img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Espresso shot premium dengan susu segar dan es batu. Rasa kopi yang kuat berpadu dengan creamy-nya susu. Cocok untuk boost energi di siang hari.", 
+        hint: "Kopi creamy, teman setia produktif ☕"
+    },
+    { 
+        id: 18, name: "Thai Tea", price: 16000, category: "Minuman", 
+        img: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", 
+        desc: "Thai tea autentik dengan campuran teh hitam Thailand, susu kental manis, dan es batu. Rasa manis, creamy, dengan aroma rempah khas Thailand.", 
+        hint: "Autentik Thailand, manis dan creamy 🧡"
+    }
 ];
 
-let bestSellerIds = [3, 7, 15];
+// --- BEST SELLER (ID produk yang jadi best seller) ---
+let bestSellerIds = [3, 7, 13];
 
+// --- DATA ULASAN ---
 let reviews = [
     { name: "Sarah Amelia", initial: "S", color: "#E91E63", rating: 5, date: "2 hari lalu", text: "Croffle-nya renyah banget! Topping cokelatnya melimpah, bikin nagih. Pasti repeat order! 🥰", photo: "https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
     { name: "Budi Santoso", initial: "B", color: "#3F51B5", rating: 5, date: "5 hari lalu", text: "Dessert box Tiramisu-nya juara! Rasanya pas, nggak terlalu manis.", photo: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" },
@@ -41,13 +137,10 @@ let reviews = [
     { name: "Rina Lestari", initial: "R", color: "#9C27B0", rating: 5, date: "3 minggu lalu", text: "Pesen buat acara keluarga, semua pada suka! ✨", photo: null }
 ];
 
-// Orders dengan items lengkap untuk struk
-let orders = [
-    { id: "#AD92202149", date: "11 Okt 2026 11:16", buyerName: "caladac", buyerWA: "081234567890", method: "Delivery", kecamatan: "Kec. Medan Amplas", subtotal: 20000, shipping: 8000, total: 28000, status: "selesai", payment: "Cash / COD", items: [{name: "1x Dimsum Ayam", variant: "Chili Oil", price: 10000}, {name: "1x Dimsum Jamur", variant: "Chili Oil", price: 10000}] },
-    { id: "#SC2410248", date: "24 Okt 2025", buyerName: "Sarah Amelia", buyerWA: "081298765432", method: "PickUp", kecamatan: "-", subtotal: 38000, shipping: 0, total: 38000, status: "dikirim", payment: "Transfer", items: [{name: "1x Croffle Biscoff", variant: "", price: 20000}, {name: "1x Iced Strawberry Latte", variant: "", price: 18000}] },
-    { id: "#SC2410240", date: "23 Okt 2025", buyerName: "Budi Santoso", buyerWA: "085211223344", method: "Delivery", kecamatan: "Kec. Medan Johor", subtotal: 25000, shipping: 8000, total: 33000, status: "diproses", payment: "QRIS", items: [{name: "1x Tiramisu Dessert Box", variant: "", price: 25000}] }
-];
+// --- DATA PESANAN (RIWAYAT) - KOSONG AWALNYA ---
+let orders = [];
 
+// --- STATE ---
 let cart = [];
 let detailQty = 1;
 let isDarkMode = false;
@@ -105,7 +198,7 @@ function logoutAdmin() {
     if(confirm('Yakin ingin logout?')) { isAdminLoggedIn = false; switchTab('home'); }
 }
 
-// REAL-TIME STATS
+// ✅ REAL-TIME STATS
 function renderAdminStats() {
     document.getElementById('stat-products').textContent = products.length;
     document.getElementById('stat-orders').textContent = orders.length;
@@ -113,7 +206,6 @@ function renderAdminStats() {
     const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0);
     document.getElementById('stat-revenue').textContent = "Rp " + totalRevenue.toLocaleString('id-ID');
     
-    // Pelanggan unik
     const uniqueCustomers = new Set(orders.map(o => o.buyerName || o.id)).size;
     document.getElementById('stat-customers').textContent = uniqueCustomers;
     
@@ -307,7 +399,7 @@ function createOrder() {
     const dateStr = now.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }) + ' ' + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
     
     const newOrder = {
-        id: "#AD" + Math.floor(Math.random() * 90000000 + 10000000),
+        id: "#SC" + Math.floor(Math.random() * 90000000 + 10000000),
         date: dateStr,
         buyerName: buyerName,
         buyerWA: buyerWA,
@@ -330,11 +422,14 @@ function createOrder() {
     // ✅ Update admin stats real-time
     renderAdminStats();
     
+    // ✅ Update riwayat real-time
+    renderHistory('all');
+    
     alert("✅ Pesanan berhasil dibuat!\n\nStatus: Sedang Diproses");
 }
 
 // ==========================================
-// RIWAYAT (STRUK CARD)
+// RIWAYAT (STRUK CARD) - REAL-TIME
 // ==========================================
 function filterHistory(status, el) {
     document.querySelectorAll('.history-tabs span').forEach(s => s.classList.remove('active'));
@@ -357,7 +452,7 @@ function renderHistory(filter = 'all') {
         div.onclick = () => showStruk(o.id);
         div.innerHTML = `
             <div class="history-struk-header">
-                <div class="history-struk-brand">Arasy Dimsum</div>
+                <div class="history-struk-brand">${STORE_NAME}</div>
                 <div class="history-struk-date">${o.date}</div>
             </div>
             <div class="history-struk-info">
@@ -382,7 +477,7 @@ function renderHistory(filter = 'all') {
 }
 
 // ==========================================
-// STRUK DETAIL
+// STRUK DETAIL (BRAND = SWEET CRUMBS)
 // ==========================================
 function showStruk(orderId) {
     const order = orders.find(o => o.id === orderId);
@@ -397,7 +492,7 @@ function showStruk(orderId) {
     `).join('');
     
     document.getElementById('struk-paper').innerHTML = `
-        <div class="struk-brand">Arasy Dimsum</div>
+        <div class="struk-brand">${STORE_NAME}</div>
         <div class="struk-brand-sub">Struk Pembelian</div>
         <div class="struk-divider"></div>
         <div class="struk-row"><span>No. Pesanan</span><span>${order.id}</span></div>
@@ -419,7 +514,7 @@ function showStruk(orderId) {
         <div class="struk-divider"></div>
         <div class="struk-stamp">PESANAN DITERIMA</div>
         <div class="struk-thanks">Simpan struk ini sebagai bukti pemesanan</div>
-        <div class="struk-thanks">Terima kasih sudah memesan di Arasy Dimsum 🍊🎉</div>
+        <div class="struk-thanks">Terima kasih sudah memesan di ${STORE_NAME} 💕🎉</div>
     `;
     
     switchTab('struk');
@@ -427,7 +522,6 @@ function showStruk(orderId) {
 
 function printStruk() {
     if(!currentStrukOrder) return;
-    // Buka window print dengan struk
     const strukHTML = document.getElementById('struk-paper').innerHTML;
     const printWindow = window.open('', '_blank');
     printWindow.document.write(`
@@ -436,7 +530,7 @@ function printStruk() {
             <title>Struk-${currentStrukOrder.id}</title>
             <style>
                 body { font-family: 'Courier New', monospace; padding: 20px; background: white; }
-                .struk-brand { font-size: 1.8rem; color: #A21C2C; text-align: center; font-weight: 700; font-style: italic; margin-bottom: 5px; }
+                .struk-brand { font-family: Georgia, serif; font-size: 1.8rem; color: #A21C2C; text-align: center; font-weight: 700; font-style: italic; margin-bottom: 5px; }
                 .struk-brand-sub { text-align: center; font-size: 0.75rem; color: #999; margin-bottom: 15px; }
                 .struk-divider { border-top: 1px dashed #999; margin: 12px 0; }
                 .struk-row, .struk-item { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 5px; }
@@ -489,7 +583,7 @@ function goToAbout() { document.getElementById('dropdown-menu').classList.remove
 function goToHelp() { document.getElementById('dropdown-menu').classList.remove('active'); switchTab('help'); }
 
 function chatAdmin() {
-    const pesan = encodeURIComponent("Halo Admin Sweet Crumbs! 👋\n\nSaya ingin bertanya tentang produk Anda.");
+    const pesan = encodeURIComponent(`Halo Admin ${STORE_NAME}! 👋\n\nSaya ingin bertanya tentang produk Anda.`);
     window.open(`https://wa.me/${ADMIN_PHONE}?text=${pesan}`, '_blank');
 }
 function callAdmin() { window.location.href = `tel:+${ADMIN_PHONE}`; }
